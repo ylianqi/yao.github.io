@@ -10,63 +10,74 @@ tags:
     - javascript
 ---
 
-##String类型
+## String类型
 String类型是字符串的对象包装类型，可以使用String构造函数来创建
+
 ```
 var str = new String('hello world')
 ```
 也可以使用使用字面量创建
+
 ```
 var str = 'hello world'
 ```
 String类型的每个实例都有一个length属性，表示字符串中含有多少个字符
+
 ```
 var str = 'hello world'
 console.log(str.length);  //11
 ```
-####字符方法
-######1.charAt()
+#### 字符方法
+###### 1.charAt()
 通过索引查找对应的字符
+
 ```
 var str = 'hello';
 cosnole.log(str.charAt(1));  //e
 ```
-######2.charCodeAt()
+###### 2.charCodeAt()
 通过索引查找对应字符的字符集编码
+
 ```
 var str = 'hello';
 cosnole.log(str.charCodeAt(1));  //101
 ```
-####字符串操作方法
-######3.concat()
+#### 字符串操作方法
+###### 3.concat()
 字符串拼接：将一到多个字符串拼接起来，返回新的字符串,原值不发生变化，可以接收多个参数
+
 ```
 var str = 'hello ';
 var newStr = str.concat('world','!');
 console.log(newStr);  ///hello world!
 ```
-######4.slice()
+###### 4.slice()
 slice(n,m) 字符串截取，从索引n开始截取到索引m，不包含m，包前不包后,源字符串不发生变化
+
 ```
 var str = 'hello world';
 var str2 = str.slice(1,7);
  console.log(str2);  //ello w
 ```
-######5.substr()
+###### 5.substr()
 subStr(n,m) 字符串截取，从索引n开始截取m个，源字符串不发生变化
+
 ```
 var str = 'hello world';
 var str2 = str.substr(1,7);
  console.log(str2);  //ello wo
 ```
-######6.substring()
+###### 6.substring()
 substring(n,m) 字符串截取，与slice()相同，从索引n开始截取到索引m，不包含m，包前不包后，源字符串不发生变化
+
 ```
 var str = 'hello world';
 var str2 = str.substring(1,7);
  console.log(str2);  //ello w
 ```
+
 slice(n),substr(n),substring(n) 都可以只传一个参数，只传一个参数是这三个的作用是一样的，都表示从所引n开始截取后面所有的字符然后返回
+
 ```
 var str = 'hello world';
 var str2 = str.slice(1);
@@ -76,58 +87,66 @@ var str4 = str.substring(1);
  console.log(str3);  //ello world
  console.log(str4);  //ello world
 ```
-####字符串位置方法
-######7.indexOf()
+#### 字符串位置方法
+###### 7.indexOf()
 从一个字符串中搜索给定的字符串，然后返回给定字符串的索引位置，如果没有找到返回-1，从前往后找，如果包含多个给定字符串，只返回查找到的第一个给定字符串的位置
+
 ```
 var str = 'hello world';
 console.log(str.indexOf('o'));  //4
 console.log(str.indexOf('x'));  //-1
 ```
-######8.LastIndexOf()
+###### 8.LastIndexOf()
 从一个字符串中搜索给定的字符串，然后返回给定字符串的索引位置，如果没有找到返回-1，从后往前找，如果包含多个给定字符串，只返回查找到的第一个给定字符串的位置
+
 ```
 var str = 'hello world';
 console.log(str.LastIndexOf('o'));  //7
 console.log(str.LastIndexOf('x'));  //-1
 ```
 indeOf()和lastIndexOf()都可以接收可选的第二个参数，表示从那个位置开始搜索
+
 ```
 var str = 'hello world';
 console.log(str.indexOf('o',6));  //7
 console.log(str.lastIndexOf('o',6));  //4
 ```
-####字符串大小写转换
-######9.toUpperCase()
+#### 字符串大小写转换
+###### 9.toUpperCase()
 转大写
+
 ```
 var str = 'hello world';
 console.log(str.toUpperCase());  //HELLO WORLD
 ```
 
-######10.toLowerCase()
+###### 10.toLowerCase()
 转小写
+
 ```
 var str = 'HELLO WORLD';
 console.log(str.toLowerCase());  //hello world
 ```
-####字符串的模式匹配方法
-######11.search()
+#### 字符串的模式匹配方法
+###### 11.search()
 search() 找到并返回第一个匹配项的索引，没有返回-1
+
 ```
 var str = 'hello world';
  console.log(str.search('orl'));  //7
 console.log(str.search('xx'));  //-1
 ```
-######12.match()
+###### 12.match()
 match() 该方法返回一个数组，数组第一项是要匹配的字符串，第二项返回第一个匹配项的索引，第三项是查找的字符串的全部字符,没有找到返回null
+
 ```
 var str = 'hello world';
  console.log(str.match('orl'));  //["o", index: 4, input: "hello world"...]
 console.log(str.match('xx'));  //-1
 ```
-######13.replace()
+###### 13.replace()
 找到第一个要匹配的字符串并替换为要替换的字符串
+
 ```
 var str = 'cat, bat, sat, fat';
 var str2 = str.replace('at','ond');
@@ -135,14 +154,16 @@ console.log(str2);  //cond, bat, sat, fat
 console.log(str);   //cat, bat, sat, fat
 ```
 可以用全局标志的正则表达式替换匹配到的所有字符串
+
 ```
 var str = 'cat, bat, sat, fat';
 var str2 = str.replace(/at/g,'ond');
 console.log(str2);  //cond, bond, sond, fond
 console.log(str);   //cat, bat, sat, fat
 ```
-######14.split()
+###### 14.split()
 这个方法可以基于指定的分隔符将字符串分割成多个子字符串，返回一个新的数组，可以接收可选的第二个参数，用于指定数组大小
+
 ```
 var str = 'hello';
 var str2 = str.split('');
