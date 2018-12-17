@@ -56,6 +56,7 @@ Undefined表示未定义，代表声明了但没有定义
 函数数据类似那个主要是指执行的函数，函数又分为两个部分：函数的定义阶段，函数调用阶段
 ## typeof检测
 typeof有两种写法：typeof(xxx) 和 typeof xxx
+
 ```typeof(123)  //number
 typeof('hello')  //string
 typeof(true)  //boolean
