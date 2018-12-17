@@ -7,7 +7,7 @@ author:     YAO
 header-img: img/post-bg-cook.jpg
 catalog: true
 tags:
-    - js
+    - javascrip
 ---
 
 ## 数据类型分类和区别
